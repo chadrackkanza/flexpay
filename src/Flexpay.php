@@ -42,14 +42,15 @@ class Flexpay
             [
                 "merchant" => $this->MERCHANT,
                 "type" => $this->TYPE_OPERATION_MOBILE_MONEY,
-                "reference" => $this->generateReferenceCode(),
-                "phone" => $this->$phoneNumber,
+                "reference" => $this->getReferenceCode(),
+                "phone" => $this->formatPhoneNumber($phoneNumber),
                 "amount" => $this->calcTotalAmount($amount, $commission),
                 "currency" => $currency,
                 "callbackUrl" => $callbackUrl
             ]
         );
 
+        //var_dump($result);
         return $result;
     }
 
@@ -74,8 +75,8 @@ class Flexpay
             [
                 "merchant" => $this->MERCHANT,
                 "type" => $this->TYPE_OPERATION_MOBILE_MONEY,
-                "reference" => $this->generateReferenceCode(),
-                "phone" => $this->$phoneNumber,
+                "reference" => $this->getReferenceCode(),
+                "phone" => $this->formatPhoneNumber($phoneNumber),
                 "amount" => $this->calcTotalAmount($amount, $commission),
                 "currency" => $currency,
                 "callbackUrl" => $callbackUrl
@@ -109,11 +110,21 @@ class Flexpay
     /*
      * getReference code
      */
-    public function generateReferenceCode(string $prefix = '')
+    public function getReferenceCode(string $prefix = '')
     {
         return uniqid($prefix);
     }
 
+    /*
+     * Format phone number consumer
+     *
+     * @param string $phoneNumber
+     */
+    public function formatPhoneNumber(string $phoneNumber)
+    {
+        // Format the number according to your needs
+        return $phoneNumber;
+    }
 
     /*
      * Init flexPlay operation
