@@ -1,5 +1,7 @@
 # Package FlexPay API
 
+Only supports Laravel 10
+
 ## Installation
 
 You can install the package via composer:
