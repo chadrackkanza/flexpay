@@ -30,21 +30,17 @@ return [
 ```
 
 
-
 ## Usage
 
-Add FlexpayServiceProvider in config/app.php
+
+Add this lines in your .env file
 
 ```php
-...
-chadrackkanza\Flexpay\FlexpayServiceProvider::class,
+FLEXPAY_TOKEN="YOUR_FLEXPAY_TOKEN"
+FLEXPAY_MERCHANT="YOUR_FLEXPAY_MERCHANT"
+FLEXPAY_URL_API="FLEXPAY_URL_API"
 ```
 
-Add Flexpay facade in config/app.php
-```php
-...
-'Flexpay' => chadrackkanza\Flexpay\FlexpayServiceProvider::class
-```
 
 Payment consumer to business
 
@@ -78,16 +74,6 @@ Check the status of a payment request sent to FlexPay
 use chadrackkanza\Flexpay\Facades\Flexpay;
 echo Flexpay::checkTransaction('YOUR_ORDER_NUMBER');
 ```
-
-
-
-Add this lines in your .env file
-
-FLEXPAY_TOKEN="YOUR_FLEXPAY_TOKEN"
-FLEXPAY_MERCHANT="YOUR_FLEXPAY_MERCHANT"
-FLEXPAY_URL_API="FLEXPAY_URL_API"
-
-
 
 ## Credits
 
