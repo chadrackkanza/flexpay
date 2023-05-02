@@ -72,3 +72,4 @@ FLEXPAY_URL_API="FLEXPAY_URL_API"
 ## Credits
 
 - [Chadrack KANZA](https://github.com/chadrackkanza)
+- [Djoy Romeo](https://github.com/djoyromeo-git/FlexPayService)
