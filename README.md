@@ -59,6 +59,13 @@ echo Flexpay::b2c(
    );
 ```
 
+Check the status of a payment request sent to FlexPay
+
+```php
+use chadrackkanza\Flexpay\Facades\Flexpay;
+echo Flexpay::checkTransaction('YOUR_ORDER_NUMBER');
+```
+
 
 
 Add this lines in your .env file
