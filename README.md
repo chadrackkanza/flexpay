@@ -34,8 +34,8 @@ return [
 ## Usage
 
 ```php
-$flexpay = new chadrackkanza\Flexpay();
-echo $flexPayService->c2b(
+use chadrackkanza\Flexpay\Facades\Flexpay;
+echo Flexpay::c2b(
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
@@ -44,14 +44,14 @@ echo $flexPayService->c2b(
    );
 ```
 
+Add this lines in your .env file
+
+FLEXPAY_TOKEN="YOUR_FLEXPAY_TOKEN"
+FLEXPAY_MERCHANT="YOUR_FLEXPAY_MERCHANT"
+FLEXPAY_URL_API="FLEXPAY_URL_API"
 
 
 
 ## Credits
 
 - [Chadrack KANZA](https://github.com/chadrackkanza)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
