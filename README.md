@@ -33,6 +33,8 @@ return [
 
 ## Usage
 
+Payment consumer to business
+
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
 echo Flexpay::c2b(
@@ -43,6 +45,21 @@ echo Flexpay::c2b(
         1 //commission
    );
 ```
+
+Payment business to consumer
+
+```php
+use chadrackkanza\Flexpay\Facades\Flexpay;
+echo Flexpay::b2c(
+        '243XXXXXXXXX', //phoneNumber
+        '1500', //amount
+        'cdf', //currency
+        'www.flexpay.cd', //callbackUrl
+        1 //commission
+   );
+```
+
+
 
 Add this lines in your .env file
 
