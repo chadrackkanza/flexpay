@@ -33,7 +33,7 @@ return [
 ## Usage
 
 
-Add this lines in your .env file
+Add these lines in your .env file
 
 ```php
 FLEXPAY_TOKEN="YOUR_FLEXPAY_TOKEN"
