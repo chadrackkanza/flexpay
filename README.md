@@ -33,6 +33,19 @@ return [
 
 ## Usage
 
+Add FlexpayServiceProvider in config/app.php
+
+```php
+...
+chadrackkanza\Flexpay\FlexpayServiceProvider::class,
+```
+
+Add Flexpay facade in config/app.php
+```php
+...
+'Flexpay' => chadrackkanza\Flexpay\FlexpayServiceProvider::class
+```
+
 Payment consumer to business
 
 ```php
