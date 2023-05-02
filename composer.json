@@ -35,29 +35,10 @@
     },
     "autoload": {
         "psr-4": {
-            "chadrackkanza\\Flexpay\\": "src/",
-            "chadrackkanza\\Flexpay\\Database\\Factories\\": "database/factories/"
+            "chadrackkanza\\Flexpay\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "chadrackkanza\\Flexpay\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        }
-    },
+
     "extra": {
         "laravel": {
             "providers": [
@@ -68,6 +49,5 @@
             }
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "dev"
 }
