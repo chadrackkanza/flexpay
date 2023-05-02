@@ -48,33 +48,36 @@ Payment consumer to business
 
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
-echo Flexpay::c2b(
+$response = Flexpay::c2b(
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
         'www.flexpay.cd', //callbackUrl
         1 //commission
    );
+dd($response);
 ```
 
 Payment business to consumer
 
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
-echo Flexpay::b2c(
+$response = Flexpay::b2c(
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
         'www.flexpay.cd', //callbackUrl
         1 //commission
    );
+dd($response);
 ```
 
 Check the status of a payment request sent to FlexPay
 
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
-echo Flexpay::checkTransaction('YOUR_ORDER_NUMBER');
+$response = Flexpay::checkTransaction('YOUR_ORDER_NUMBER');
+dd($response);
 ```
 
 ## Credits
