@@ -22,6 +22,7 @@ class Flexpay
         
         $this->URL_C2B = $this->URL_API . config('flexpay.url_c2b');
         $this->URL_B2C = $this->URL_API . config('flexpay.url_b2c');
+        $this->URL_CARD = $this->URL_API_CARD . config('flexpay.url_card');
         $this->URL_CHECK_TRANSACTION = $this->URL_API . config('flexpay.url_check_transaction');
         $this->TOKEN = config('flexpay.token');
         $this->MERCHANT = config('flexpay.merchant');
@@ -93,7 +94,7 @@ class Flexpay
              string $callbackUrl, string $approveUrl, string $cancelUrl, string $declineUrl,string $homeUrl )
     {
         $result = $this->init(
-            $this->URL_API_CARD,
+            $this->URL_CARD,
             [
                 "merchant" => $this->MERCHANT,
                 "reference" => $reference ,
