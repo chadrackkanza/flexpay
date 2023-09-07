@@ -90,12 +90,13 @@ class Flexpay
         return $result;
     }
 
-    public function cardPayment(string $reference , string $description , float $amount, string $currency,
+    public function payment(string $reference , string $description , float $amount, string $currency,
              string $callbackUrl, string $approveUrl, string $cancelUrl, string $declineUrl,string $homeUrl )
     {
         $result = $this->init(
             $this->URL_CARD,
             [
+                "authorization" => $this->TOKEN,
                 "merchant" => $this->MERCHANT,
                 "reference" => $reference ,
                 "description" => $description ,

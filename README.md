@@ -52,7 +52,7 @@ $response = Flexpay::c2b(
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
-        'www.flexpay.cd', //callbackUrl
+        'https://mon-site.com', //callbackUrl
         1 //commission
    );
 dd($response);
@@ -66,7 +66,7 @@ $response = Flexpay::b2c(
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
-        'www.flexpay.cd', //callbackUrl
+        'https://mon-site.com', //callbackUrl
         1 //commission
    );
 dd($response);
@@ -77,6 +77,24 @@ Check the status of a payment request sent to FlexPay
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
 $response = Flexpay::checkTransaction('YOUR_ORDER_NUMBER');
+dd($response);
+```
+
+Payment ( e-money, qr-code and card)
+
+```php
+use chadrackkanza\Flexpay\Facades\Flexpay;
+$response = Flexpay::payment(
+        "TEST0014521", // reference
+        "Tests de paiement", // description
+        10, // amount
+        "USD", // currency
+        "https://mon-site.com/callback.com", // callback_url
+        "https://mon-site.com/approve.com", //approve_url
+        "https://mon-site.com/cancel.com", // cancel_url
+        "https://mon-site.com/decline.com" // decline_url
+        "https://mon-site.com" // home_url
+   );
 dd($response);
 ```
 
