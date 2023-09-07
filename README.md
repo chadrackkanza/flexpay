@@ -94,7 +94,7 @@ $response = Flexpay::payment(
         "https://mon-site.com/callback.com", // callback_url
         "https://mon-site.com/approve.com", //approve_url
         "https://mon-site.com/cancel.com", // cancel_url
-        "https://mon-site.com/decline.com" // decline_url
+        "https://mon-site.com/decline.com", // decline_url
         "https://mon-site.com" // home_url
    );
 dd($response);
