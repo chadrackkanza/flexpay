@@ -90,7 +90,7 @@ class Flexpay
     }
 
     public function cardPayment(string $reference , string $description , float $amount, string $currency,
-             string $callbackUrl, string $approveUrl, string $cancelUrl, string $declineUrl,string $homeUrl, )
+             string $callbackUrl, string $approveUrl, string $cancelUrl, string $declineUrl,string $homeUrl )
     {
         $result = $this->init(
             $this->URL_API_CARD,
@@ -98,7 +98,7 @@ class Flexpay
                 "merchant" => $this->MERCHANT,
                 "reference" => $reference ,
                 "description" => $description ,
-                "amount" => $this->calcTotalAmount($amount, $commission),
+                "amount" => $this->calcTotalAmount($amount),
                 "currency" => $currency,
                 "callback_url" => $callbackUrl,
                 "approve_url" => $approveUrl,
