@@ -18,6 +18,8 @@ class Flexpay
     public function __construct() 
     {
         $this->URL_API = config('flexpay.url_api');
+        $this->URL_API_CARD = config('flexpay.url_api_card');
+        
         $this->URL_C2B = $this->URL_API . config('flexpay.url_c2b');
         $this->URL_B2C = $this->URL_API . config('flexpay.url_b2c');
         $this->URL_CHECK_TRANSACTION = $this->URL_API . config('flexpay.url_check_transaction');
@@ -87,6 +89,28 @@ class Flexpay
         return $result;
     }
 
+    public function cardPayment(string $reference , string $description , float $amount, string $currency,
+             string $callbackUrl, string $approveUrl, string $cancelUrl, string $declineUrl,string $homeUrl, )
+    {
+        $result = $this->init(
+            $this->URL_API_CARD,
+            [
+                "merchant" => $this->MERCHANT,
+                "reference" => $reference ,
+                "description" => $description ,
+                "amount" => $this->calcTotalAmount($amount, $commission),
+                "currency" => $currency,
+                "callback_url" => $callbackUrl,
+                "approve_url" => $approveUrl,
+                "cancel_url" => $cancelUrl,
+                "decline_url" => $declineUrl,
+                "home_url" => $homeUrl,
+            ]
+        );
+
+        //var_dump($result);
+        return $result;
+    }
     /*
      * Check transaction
      *
