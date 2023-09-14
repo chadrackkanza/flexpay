@@ -100,6 +100,14 @@ $response = Flexpay::payment(
 dd($response);
 ```
 
+Check the status of a payment ( e-money, qr-code and card) request sent to FlexPay
+
+```php
+use chadrackkanza\Flexpay\Facades\Flexpay;
+$response = Flexpay::getOrderNumber('YOUR_ORDER_NUMBER');
+dd($response);
+```
+
 ## Credits
 
 - [Chadrack KANZA](https://github.com/chadrackkanza)

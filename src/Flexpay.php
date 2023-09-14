@@ -15,15 +15,16 @@ class Flexpay
     protected $TYPE_OPERATION_MOBILE_MONEY = 1;
 
 
-    public function __construct() 
+    public function __construct()
     {
         $this->URL_API = config('flexpay.url_api');
         $this->URL_API_CARD = config('flexpay.url_api_card');
-        
+
         $this->URL_C2B = $this->URL_API . config('flexpay.url_c2b');
         $this->URL_B2C = $this->URL_API . config('flexpay.url_b2c');
         $this->URL_CARD = $this->URL_API_CARD . config('flexpay.url_card');
         $this->URL_CHECK_TRANSACTION = $this->URL_API . config('flexpay.url_check_transaction');
+        $this->URL_GET_ORDER_NUMBER = $this->URL_API . config('flexpay.url_get_order_number');
         $this->TOKEN = config('flexpay.token');
         $this->MERCHANT = config('flexpay.merchant');
         $this->TYPE_OPERATION_MOBILE_MONEY = 1;
@@ -113,6 +114,20 @@ class Flexpay
         //var_dump($result);
         return $result;
     }
+
+    public function getOrderNumber(string $code)
+    {
+        $result = $this->init(
+            $this->URL_GET_ORDER_NUMBER . '/' . $code ,
+            [
+                "authorization" => $this->TOKEN,
+                "merchant" => $this->MERCHANT,
+                "code" => $code ,
+            ]
+        );
+
+        return $result;
+    }
     /*
      * Check transaction
      *
@@ -167,7 +182,6 @@ class Flexpay
                 ->withHeaders([
                     'Content-Type' => 'application/json',
                     'Accept'        => 'application/json'
-
                 ])
                 ->withToken($this->TOKEN)
                 ->retry(3,100)
@@ -177,7 +191,6 @@ class Flexpay
         }
         catch (\Exception $exception) {
             // operation failed
-            // var_dump($exception)
             return false;
         }
     }
