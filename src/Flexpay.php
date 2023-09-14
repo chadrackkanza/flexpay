@@ -24,7 +24,7 @@ class Flexpay
         $this->URL_B2C = $this->URL_API . config('flexpay.url_b2c');
         $this->URL_CARD = $this->URL_API_CARD . config('flexpay.url_card');
         $this->URL_CHECK_TRANSACTION = $this->URL_API . config('flexpay.url_check_transaction');
-        $this->URL_GET_ORDER_NUMBER = $this->URL_API . config('flexpay.url_get_order_number');
+        $this->URL_GET_ORDER_NUMBER = $this->URL_API_CARD . config('flexpay.url_get_order_number');
         $this->TOKEN = config('flexpay.token');
         $this->MERCHANT = config('flexpay.merchant');
         $this->TYPE_OPERATION_MOBILE_MONEY = 1;
@@ -118,7 +118,7 @@ class Flexpay
     public function getOrderNumber(string $code)
     {
         $result = $this->init(
-            $this->URL_GET_ORDER_NUMBER . '/' . $code ,
+            $this->URL_GET_ORDER_NUMBER ,
             [
                 "authorization" => $this->TOKEN,
                 "merchant" => $this->MERCHANT,

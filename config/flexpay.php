@@ -10,5 +10,5 @@ return [
     'url_b2c' => '/api/rest/v1/merchantPayOutService',
     'url_card' => '/api/rest/v1/vpos/ask',
     'url_check_transaction' => '/api/rest/v1/check',
-    'url_get_order_number' => '/api/rest/v1/vpos',
+    'url_get_order_number' => '/api/rest/v1/vpos/orderNumber',
 ];
