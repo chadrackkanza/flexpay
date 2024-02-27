@@ -1,6 +1,6 @@
 # Package FlexPay API
 
-Only supports Laravel 10
+For Laravel 9 and 10
 
 ## Installation
 
@@ -24,12 +24,13 @@ This is the contents of the published config file:
 return [
     'token' => env('FLEXPAY_TOKEN'),
     'merchant' => env('FLEXPAY_MERCHANT'),
-    'url_api' => env('FLEXPAY_URL_API','http://41.243.7.46:3006'),
-    'url_api_card' => env('FLEXPAY_URL_API_CARD','https://beta-cardpayment.flexpay.cd'),
-    'url_c2b' => '/api/rest/v1/paymentService',
-    'url_b2c' => '/api/rest/v1/merchantPayOutService',
-    'url_card' => '/api/rest/v1/vpos/ask',
-    'url_check_transaction' => '/api/rest/v1/check',
+    'url_api' => env('FLEXPAY_URL_API','https://backend.flexpay.cd'),
+    'url_api_card' => env('FLEXPAY_URL_API_CARD','https://cardpayment.flexpay.cd'),
+    'url_c2b' => env('FLEXPAY_URL_C2B','/api/rest/v1/paymentService'),
+    'url_b2c' =>  env('FLEXPAY_URL_B2C','/api/rest/v1/merchantPayOutService'),
+    'url_card' => env('FLEXPAY_URL_CARD','/api/rest/v1/vpos/ask'),
+    'url_check_transaction' => env('FLEXPAY_URL_CHECK','/api/rest/v1/check'),
+    'url_get_order_number' => env('FLEXPAY_URL_GET_ORDER_NUMBER','/api/rest/v1/vpos/orderNumber'),
 ];
 ```
 
@@ -43,6 +44,7 @@ Add these lines in your .env file
 FLEXPAY_TOKEN="YOUR_FLEXPAY_TOKEN"
 FLEXPAY_MERCHANT="YOUR_FLEXPAY_MERCHANT"
 FLEXPAY_URL_API="FLEXPAY_URL_API"
+FLEXPAY_URL_API_CARD="FLEXPAY_URL_API_CARD"
 ```
 
 

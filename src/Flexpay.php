@@ -87,7 +87,6 @@ class Flexpay
             ]
         );
 
-        //var_dump($result);
         return $result;
     }
 
@@ -111,7 +110,6 @@ class Flexpay
             ]
         );
 
-        //var_dump($result);
         return $result;
     }
 
@@ -191,7 +189,8 @@ class Flexpay
         }
         catch (\Exception $exception) {
             // operation failed
-            return false;
+
+            return $exception;
         }
     }
 }
