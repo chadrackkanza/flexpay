@@ -39,14 +39,14 @@ class Flexpay
      * @param string $callbackUrl
      * @param float $commission = 0
      */
-    public function c2b(string $phoneNumber, float $amount, string $currency, string $callbackUrl, float $commission = 0)
+    public function c2b(string $reference, string $phoneNumber, float $amount, string $currency, string $callbackUrl, float $commission = 0)
     {
         $result = $this->init(
             $this->URL_C2B,
             [
                 "merchant" => $this->MERCHANT,
                 "type" => $this->TYPE_OPERATION_MOBILE_MONEY,
-                "reference" => $this->getReferenceCode(),
+                "reference" => $reference,
                 "phone" => $this->formatPhoneNumber($phoneNumber),
                 "amount" => $this->calcTotalAmount($amount, $commission),
                 "currency" => $currency,
@@ -72,14 +72,14 @@ class Flexpay
      * @param string $callbackUrl
      * @param float $commission = 0
      */
-    public function b2c(string $phoneNumber, float $amount, string $currency, string $callbackUrl, float $commission = 0)
+    public function b2c(string $reference, string $phoneNumber, float $amount, string $currency, string $callbackUrl, float $commission = 0)
     {
         $result = $this->init(
             $this->URL_B2C,
             [
                 "merchant" => $this->MERCHANT,
                 "type" => $this->TYPE_OPERATION_MOBILE_MONEY,
-                "reference" => $this->getReferenceCode(),
+                "reference" => $reference,
                 "phone" => $this->formatPhoneNumber($phoneNumber),
                 "amount" => $this->calcTotalAmount($amount, $commission),
                 "currency" => $currency,

@@ -53,6 +53,7 @@ Payment consumer to business
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
 $response = Flexpay::c2b(
+        "TEST0014521", // reference
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
@@ -67,6 +68,7 @@ Payment business to consumer
 ```php
 use chadrackkanza\Flexpay\Facades\Flexpay;
 $response = Flexpay::b2c(
+        "TEST0014521", // reference
         '243XXXXXXXXX', //phoneNumber
         '1500', //amount
         'cdf', //currency
